@@ -1,0 +1,43 @@
+
+
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	
+<ui:define name="content">
+<h:form>
+	<p:panelGrid columns="4">
+
+        
+            <h:outputLabel value="Nome:" />
+            <p:inputText  required="true" value="#{funcionarioBean.funcionario.nome}" />
+ 
+            <p:outputLabel value="Data Nascimento:" />
+            <p:calendar  required="true" value="#{funcionarioBean.funcionario.dataNascimento}"
+             	locale="pt" patterner="yyyy-MM-dd"/>
+            
+             <p:outputLabel value="CPF:" />
+            <p:inputText  required="true" value="#{funcionarioBean.funcionario.cpf}" />
+            
+             <p:outputLabel value="CTPS:" />
+            <p:inputText  required="true" value="#{funcionarioBean.funcionario.ctps}" />
+            
+             <p:outputLabel value="Valor Sálario:" />
+            <p:inputText  required="true" value="#{funcionarioBean.funcionario.valorSalario}" />
+            
+             <p:outputLabel value="Cargo:" />
+            <p:inputText  required="true" value="#{funcionarioBean.funcionario.cargo}"/>
+ 				
+ 				
+ 				<p:commandButton value="Salvar"  action="#{funcionarioBean.salvar}"
+ 					process="@form" update="@form" />
+            </p:panelGrid>
+            </h:form>
+</ui:define>
+	
+</ui:composition>	
